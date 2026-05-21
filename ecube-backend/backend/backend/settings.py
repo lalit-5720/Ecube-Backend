@@ -68,6 +68,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL =True
+CSRF_TRUSTED_ORIGINS = [
+    "https://ecubebackend-z9fxp5mu.b4a.run",
+]
 
 ROOT_URLCONF = "backend.urls"
 
