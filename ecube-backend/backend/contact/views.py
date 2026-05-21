@@ -25,13 +25,15 @@ class ContactView(ViewSet):
                 # Mailjet API credentials (loaded from .env or server environment variables)
                 MAILJET_API_KEY = os.environ.get("MAILJET_API_KEY")
                 MAILJET_API_SECRET = os.environ.get("MAILJET_API_SECRET")
+                print("MAILJET_API_KEY:", MAILJET_API_KEY)
+                print("MAILJET_API_SECRET:", MAILJET_API_SECRET)
                 
                 if not MAILJET_API_KEY or not MAILJET_API_SECRET:
                     return Response({'error': 'Server missing Mailjet API keys.'}, status=500)
                 
                 # The sender email MUST be verified in your Mailjet account!
                 # Replace this with the email you verified on Mailjet.
-                MAILJET_SENDER_EMAIL = "gopallalit2000@gmail.com" 
+                MAILJET_SENDER_EMAIL = "lalitchandran2004@gmail.com" 
 
                 mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3.1')
                 
@@ -44,7 +46,7 @@ class ContactView(ViewSet):
                             },
                             "To": [
                                 {
-                                    "Email": "gopallalit2000@gmail.com",
+                                    "Email": "lalitchandran2004@gmail.com",
                                     "Name": "Admin"
                                 }
                             ],
